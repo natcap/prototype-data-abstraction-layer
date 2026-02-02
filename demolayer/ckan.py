@@ -43,8 +43,9 @@ CATALOG_DATA = {
 
 # map InVEST abstract type to the search query that matches
 INVEST_TYPES = {
-    'DEM': 'tags=DEM',
-    'K_FACTOR': 'tags=SOIL+ERODIBILITY',
+    'DEM': 'tags:DEM',
+    'K_FACTOR': 'tags:SOIL+ERODIBILITY',
+    'LULC': 'tags:LULC',
     # 'PRECIP': '',  # We don't yet have precip on the data hub
 }
 # Sanity check: make sure the INVEST types above match the enum in the common
@@ -112,13 +113,17 @@ def search(invest_type, bbox=None):
                 extras['ext_bbox'] = ','.join((str(coord) for coord in bbox))
 
             result = catalog.action.package_search(
-                q=query_string,
+                fq=query_string,
                 start=offset,
                 extras=extras,
             )
             if not count:
                 count = result['count']
             for dataset in result['results']:
+                # Skip collections for now
+                if dataset['type'] != 'dataset':
+                    offset += 1
+                    continue
 
                 gmm_data = None
                 for resource in dataset['resources']:
@@ -126,20 +131,29 @@ def search(invest_type, bbox=None):
                         yml_text = requests.get(resource['url']).text
                         gmm_data = yaml.load(yml_text, Loader=yaml.CLoader)
                         assert isinstance(gmm_data, dict)
+                    elif resource['url'].endswith('.tif'):
+                        layer_url = resource['url']
+                    elif layer_url.endswith('.zip'):
+                        layer_url = f"zip+{resource['url']}"
 
                 if gmm_data:
-                    wgs84_bbox = _warp_bbox_to_wgs84(gmm_data['spatial'])
+                    try:
+                        wgs84_bbox = _warp_bbox_to_wgs84(gmm_data['spatial'])
+                    except KeyError:
+                        offset += 1
+                        continue
 
                 yield commondatamodel.RasterLayer(
                     source_catalog_dataset_url=(
                         f'{CKAN_API_URL}/dataset/{dataset["name"]}'),
+                    layer_url=layer_url,
                     source_rest_data=dataset,
                     name=dataset['title'],
                     invest_type=invest_type,
                     license={
-                        'id': dataset['license_id'],
-                        'title': dataset['license_title'],
-                        'url': dataset['license_url'],
+                        'id': dataset.get('license_id'),
+                        'title': dataset.get('license_title'),
+                        'url': dataset.get('license_url'),
                     },
                     description=dataset['notes'],
                     wgs84_extent=wgs84_bbox,

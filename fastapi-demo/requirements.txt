@@ -1,0 +1,4 @@
+ckanapi
+pydantic
+requests
+fastapi

@@ -1,12 +1,13 @@
 import json
 import requests
-from enum import Enum
-from typing import Annotated, Optional
+from typing import Annotated
 
 from ckanapi import RemoteCKAN
 from fastapi import FastAPI, Query
 from pydantic import BaseModel, Field, validator
 
+import utils
+from models import DataType, LicenseInfo, SearchParams, DatasetSearchResult, SearchResponse
 
 app = FastAPI()
 
@@ -26,133 +27,51 @@ COLLECTION_VOCAB_ID = 'coming-soon'
 #COLLECTION_VOCAB_ID = '852876fe-49eb-4b88-95d9-44b35facf7ce'
 
 
-class DataType(str, Enum):
-    """Class for dataset formats InVEST can request."""
-    raster = 'raster'
-    vector = 'vector'
-    table = 'table'
+class CKANException(Exception):
+    def __init__(self, message: str, status_code: int = 500):
+        self.message = message
+        self.status_code = status_code
+        super().__init__(self.message)
 
 
-class LicenseInfo(BaseModel):
-    """Class for a dataset's license information."""
-    id: str | None = None
-    title: str | None = None
-    url: str | None = None
+@app.exception_handler(CKANException)
+def ckan_exception_handler(request: Request, exc: CKANException) -> JSONResponse:
+    """Handle exceptions thrown by RemoteCKAN."""
+    return JSONResponse(status_code=exc.status_code,
+                        content={
+                            "error_code": exc.status_code,
+                            "error_message": exc.message
+                        })
 
 
-# Mapping of DataTypes to the values stored in the `sources_res_formats` extra
-# of datasets on the Hub
-HUB_DATATYPE_MAP = {
-    DataType.raster: 'tif',
-    DataType.vector: 'shp',
-    DataType.table: 'csv'
-}
-
-# Mapping of DataTypes to relevant file extensions, for extracting the correct
-# Resource from a Data Hub Package
-EXTENSION_MAP = {
-    DataType.vector: ['SHP', 'GEOJSON'],
-    DataType.raster: ['TIF', 'TIFF'],
-    DataType.table: ['CSV']
-}
-
-def _resource_type_matches(url, datatype):
-    """Check a Resource file extension against the expected datatype."""
-    extension = url.rsplit('.', 1)[-1].upper()
-    if extension in EXTENSION_MAP[datatype]:
-        return True
-
-def _tag_search_string_and(tags):
-    """Format a search string for tags using AND syntax.
-
-    All tags must be wrapped in double quotes in case they contain whitespace.
-    """
-    tag_str = '" AND "'.join(tag for tag in tags)
-    return f'tags:("{tag_str}")'
-
-
-def _tag_search_string_or(tags):
-    """Format a search string for tags using OR syntax.
-
-    All tags must be wrapped in double quotes in case they contain whitespace.
-    """
-    tag_str = '" OR "'.join(tag for tag in tags)
-    return f'tags:("{tag_str}")'
-
-
-class SearchParams(BaseModel):
-    """Class for an InVEST input search."""
-    tags: list[str]
-    """List of keywords from a shared vocabulary between InVEST and the Data Hub."""
-    datatype: DataType
-    """The file format. One of: raster, vector, or csv."""
-    extent: Optional[list[float]] = None
-    """A 4-element iterable of [minx, miny, maxx, maxy] in EPSG:4326"""
-    sibling: str | None = None
-    """The relation tag linking two inputs."""
-
-    @validator('extent')
-    def validate_extent_length(cls, v):
-        assert len(v) == 4, 'extent must be a list of length 4'
-        return v
-
-
-class DatasetSearchResult(BaseModel):
-    """Class containing details of a Data Hub dataset."""
-    dataset_url: str
-    """The URL of the dataset, to be used as an InVEST input."""
-    source_catalog_url: str
-    """The URL to the Package containing the dataset on the Hub."""
-    name: str
-    """The dataset name."""
-    description: str
-    """The dataset description."""
-    extent: Optional[list[float]] = None
-    """A 4-element iterable of [minx, miny, maxx, maxy] in EPSG:4326"""
-    tags: list[str]
-    """All non-vocabulary tags associated with the dataset."""
-    places: list[str]
-    """Place vocabulary tags associated with the dataset."""
-    collection: list[str]
-    """The Collections the dataset is a part of.
-
-    To be used as the `sibling` input in a related search, when relevant.
-    """
-    license: LicenseInfo
-    """Dict containing the license id, title, and url."""
-    author: str
-    """The dataset author."""
-    created: str
-    """The dataset's ``metadata_created`` date."""
-    last_updated: str
-    """The dataset's ``metadata_modified`` date."""
-
-
-class SearchResponse(BaseModel):
-    """Class for search results, including both result count and datasets."""
-    count: int
-    """The number of returned search results."""
-    datasets: list[DatasetSearchResult]
-    """List of DatasetSearchResult objects representing relevant search results."""
+@app.exception_handler(Exception)
+def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    """Handle any unexpected exceptions."""
+    LOGGER.error(f"Exception: {str(exc)}")
+    return JSONResponse(status_code=500,
+                        content={
+                            "error_code": 500,
+                            "error_message": exc.__str__()
+                        })
 
 
 @app.get("/search_dataset/")
 def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResponse:
     """Search for datasets on the Data Hub that match the provided criteria."""
     # For dev: need to set verify=False when working with the dev CKAN container
-    session = requests.Session()
-    session.verify = False
+    #session = requests.Session()
+    #session.verify = False
+
+    q = utils.tag_search_string_or(filter_query.tags)
 
     # Skip collections for now:
     fq_list = ['type:dataset']
-    extras = {}
-
-    fq_list.append(f'extras_sources_res_formats:{HUB_DATATYPE_MAP[filter_query.datatype]}')
-    fq_list.append(_tag_search_string_or(filter_query.tags))
-
+    fq_list.append(
+        f'extras_sources_res_formats:{utils.HUB_DATATYPE_MAP[filter_query.datatype]}')
     if filter_query.sibling:
         fq_list.append(f'extras_collection:"{filter_query.sibling.upper()}"')
 
+    extras = {}
     if filter_query.extent:
         extras['ext_bbox'] = ','.join((str(coord) for coord in filter_query.extent))
 
@@ -160,6 +79,15 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
     with RemoteCKAN(CKAN_API_URL, session=session) as catalog:
         offset = 0
         count = None
+
+        ckan_query_dict = {
+            'q': q,
+            'fq_list': fq_list,
+            'start': offset,
+            'extras': extras,
+            'sort': 'score desc' # Most relevant results first
+        }
+
         while True:
             result = catalog.action.package_search(
                 fq_list=fq_list,
@@ -188,7 +116,7 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
                 index = 0
                 while index < len(dataset['resources']):
                     res = dataset['resources'][index]
-                    if _resource_type_matches(res['url'], filter_query.datatype):
+                    if utils.resource_type_matches(res['url'], filter_query.datatype):
                         dataset_url = res['url']
                         break
                     index += 1

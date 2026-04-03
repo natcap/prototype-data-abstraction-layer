@@ -68,7 +68,7 @@ def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
 def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResponse:
     """Search for datasets on the Data Hub that match the provided criteria."""
     # For dev: need to set verify=False when working with the dev CKAN container
-    #session = requests.Session()
+    session = requests.Session()
     #session.verify = False
 
     q = utils.tag_search_string_or(filter_query.tags)

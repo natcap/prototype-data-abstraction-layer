@@ -1,25 +1,34 @@
+import logging
 import json
 import requests
 from typing import Annotated
 
+import ckanapi.errors
 from ckanapi import RemoteCKAN
-from fastapi import FastAPI, Query
-from pydantic import BaseModel, Field, validator
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.responses import JSONResponse
 
 import utils
 from models import DataType, LicenseInfo, SearchParams, DatasetSearchResult, SearchResponse
 
-app = FastAPI()
+
+LOGGER = logging.getLogger(__name__)
+
+app = FastAPI(
+    title="Natural Capital Alliance Data Hub Abstraction Layer",
+    description="API for querying the NatCap Data Hub from InVEST.",
+    version="0.1.0"
+)
 
 # Production:
-#CKAN_API_URL = 'https://data.naturalcapitalalliance.stanford.edu'
-#PLACE_VOCAB_ID = '08e541f5-0f71-4931-bfc8-30bf66801146'
-#COLLECTION_VOCAB_ID = 'coming-soon'
+CKAN_API_URL = 'https://data.naturalcapitalalliance.stanford.edu'
+PLACE_VOCAB_ID = '08e541f5-0f71-4931-bfc8-30bf66801146'
+COLLECTION_VOCAB_ID = 'coming-soon'
 
 # Staging:
-CKAN_API_URL = 'https://data-staging.naturalcapitalproject.org'
-PLACE_VOCAB_ID = '10db4d07-a510-4838-ad1b-2adcf4a212f4'
-COLLECTION_VOCAB_ID = 'coming-soon'
+#CKAN_API_URL = 'https://data-staging.naturalcapitalproject.org'
+#PLACE_VOCAB_ID = '10db4d07-a510-4838-ad1b-2adcf4a212f4'
+#COLLECTION_VOCAB_ID = 'coming-soon'
 
 # Dev:
 #CKAN_API_URL = 'https://localhost:8443'
@@ -89,12 +98,13 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
         }
 
         while True:
-            result = catalog.action.package_search(
-                fq_list=fq_list,
-                start=offset,
-                extras=extras,
-                sort='score desc' # Most relevant results first
-            )
+            try:
+                result = catalog.action.package_search(**ckan_query_dict)
+            except ckanapi.errors.CKANAPIError as e:
+                LOGGER.error("Exception on RemoteCKAN catalog.action.package_search:"
+                             f" {e}; search parameters: {ckan_query_dict}")
+                raise CKANException(status_code=500, message=f"{e}")
+
             if not count:
                 count = result['count']
 

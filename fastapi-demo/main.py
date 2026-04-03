@@ -5,7 +5,7 @@ from typing import Annotated
 
 import ckanapi.errors
 from ckanapi import RemoteCKAN
-from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi import FastAPI, Query, Request
 from fastapi.responses import JSONResponse
 
 import utils

@@ -103,8 +103,9 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
             try:
                 result = catalog.action.package_search(**ckan_query_dict)
             except ckanapi.errors.CKANAPIError as e:
-                LOGGER.error("Exception on RemoteCKAN catalog.action.package_search:"
-                             f" {e}; search parameters: {ckan_query_dict}")
+                LOGGER.exception(
+                    "Exception on RemoteCKAN catalog.action.package_search:"
+                    f" {e}; search parameters: {ckan_query_dict}")
                 raise CKANException(status_code=500, message=f"{e}")
 
             if 'count' not in result or 'results' not in result:

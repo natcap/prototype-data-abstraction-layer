@@ -23,15 +23,24 @@ class SearchParams(BaseModel):
     tags: list[str]
     """List of keywords from a shared vocabulary between InVEST and the Data Hub."""
     datatype: DataType
-    """The file format. One of: raster, vector, or csv."""
+    """The file format. One of: raster, vector, or table."""
     extent: Optional[list[float]] = None
-    """A 4-element iterable of [minx, miny, maxx, maxy] in EPSG:4326"""
+    """A 4-element iterable of [minx, miny, maxx, maxy] in EPSG:4326.
+    Extent must not include inf or -inf.
+    """
     sibling: str | None = None
     """The relation tag linking two inputs."""
 
     @field_validator('extent')
     def validate_extent_length(cls, v):
         assert len(v) == 4, 'extent must be a list of length 4'
+        return v
+
+    @field_validator('extent')
+    def validate_extent_infinity(cls, v):
+        # CKAN spatial search 404s on infinity, after a long wait.
+        assert float('inf') not in v and -float('inf') not in v, (
+                'extent cannot include infinity')
         return v
 
 
@@ -52,9 +61,8 @@ class DatasetSearchResult(BaseModel):
     places: list[str]
     """Place vocabulary tags associated with the dataset."""
     collection: list[str]
-    """The Collections the dataset is a part of.
-
-    To be used as the `sibling` input in a related search, when relevant.
+    """The Collections the dataset is a part of. To be used as the
+    `sibling` input in a related search, when relevant.
     """
     license: LicenseInfo
     """Dict containing the license id, title, and url."""

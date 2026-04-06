@@ -95,6 +95,18 @@ class APITests(unittest.TestCase):
         self.assertEqual(resp.status_code, 422)
         assert 'extent' in resp.json()['detail'][0]['loc']
 
+    def test_search_dataset_bad_query_infinity_extent(self):
+        """Test API handles bad query parameters: extent includes infinity."""
+        params = {
+            "tags": ["DEM"],
+            "datatype": "raster",
+            "extent": [float('inf'), -126.56, 25.19, -92.11]
+        }
+        resp = client.get("/search_dataset/", params=params)
+
+        self.assertEqual(resp.status_code, 422)
+        assert 'extent' in resp.json()['detail'][0]['loc']
+
     def test_handle_ckan_payload_missing_count_results(self):
         """Handle case where CKAN payload lacks `count` or `results`."""
         with patch('dhal_api.main.RemoteCKAN.call_action') as mock_ckan:

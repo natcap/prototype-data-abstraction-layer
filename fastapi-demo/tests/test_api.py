@@ -11,7 +11,7 @@ from dhal_api.main import app
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'test_data')
 
-client = TestClient(app)
+client = TestClient(app, raise_server_exceptions=False)
 
 
 class APITests(unittest.TestCase):
@@ -110,19 +110,17 @@ class APITests(unittest.TestCase):
         data = resp.json()
         self.assertIn("error_message", data.keys())
 
-# TO DO: Figure out how to mock raising this error in a way that doesn't
-# immediately cause the test to fail
-#    def test_handle_ckan_error(self):
-#        """Test handling CKANAPIError."""
-#        with patch('dhal_api.main.RemoteCKAN.call_action') as mock_ckan:
-#            mock_ckan.side_effect = Exception(CKANAPIError)
-#
-#            params = {
-#                "tags": ["DEM"],
-#                "datatype": "raster"
-#            }
-#            resp = client.get("/search_dataset/", params=params)
-#
-#        self.assertEqual(resp.status_code, 500)
-#        data = resp.json()
-#        self.assertIn("error_message", data.keys())
+    def test_handle_ckan_error(self):
+        """Test handling CKANAPIError."""
+        with patch('dhal_api.main.RemoteCKAN.call_action') as mock_ckan:
+            mock_ckan.side_effect = Exception(CKANAPIError)
+
+            params = {
+                "tags": ["DEM"],
+                "datatype": "raster"
+            }
+            resp = client.get("/search_dataset/", params=params)
+
+        self.assertEqual(resp.status_code, 500)
+        data = resp.json()
+        self.assertIn("error_message", data.keys())

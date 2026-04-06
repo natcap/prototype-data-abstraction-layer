@@ -37,6 +37,21 @@ class APITests(unittest.TestCase):
             expected_data = json.load(test_resp)
             self.assertEqual(data, expected_data)
 
+    def test_search_dataset_no_results(self):
+        """Test response when no matching datasets found."""
+        with patch('dhal_api.main.RemoteCKAN.call_action') as mock_ckan:
+            mock_ckan.return_value = {'count': 0, 'results': []}
+
+            params = {
+                "tags": ["DEM"],
+                "datatype": "vector"
+            }
+            resp = client.get("/search_dataset/", params=params)
+
+        self.assertEqual(resp.status_code, 200)
+        data = resp.json()
+        self.assertEqual(data, {'count': 0, 'datasets': []})
+
     def test_search_dataset_filter_result(self):
         """CKAN returns Package where relevant Resource cannot be determined."""
         with open(f'{DATA_DIR}/ckan_response_data_filter.json') as f:

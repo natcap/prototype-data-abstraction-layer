@@ -107,7 +107,7 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
                              f" {e}; search parameters: {ckan_query_dict}")
                 raise CKANException(status_code=500, message=f"{e}")
 
-            if not result.get('count') or not result.get('results'):
+            if 'count' not in result or 'results' not in result:
                 # This shouldn't happen, but check just in case!
                 LOGGER.error(f"CKAN returned unexpected payload: {result}")
                 raise CKANException(status_code=404,

@@ -8,8 +8,10 @@ from ckanapi import RemoteCKAN
 from fastapi import FastAPI, Query, Request
 from fastapi.responses import JSONResponse
 
-import utils
-from models import DataType, LicenseInfo, SearchParams, DatasetSearchResult, SearchResponse
+from dhal_api import utils
+from dhal_api.models import (
+    DataType, LicenseInfo, SearchParams, DatasetSearchResult, SearchResponse
+)
 
 
 LOGGER = logging.getLogger(__name__)
@@ -21,9 +23,9 @@ app = FastAPI(
 )
 
 # Production:
-CKAN_API_URL = 'https://data.naturalcapitalalliance.stanford.edu'
-PLACE_VOCAB_ID = '08e541f5-0f71-4931-bfc8-30bf66801146'
-COLLECTION_VOCAB_ID = 'coming-soon'
+#CKAN_API_URL = 'https://data.naturalcapitalalliance.stanford.edu'
+#PLACE_VOCAB_ID = '08e541f5-0f71-4931-bfc8-30bf66801146'
+#COLLECTION_VOCAB_ID = 'coming-soon'
 
 # Staging:
 #CKAN_API_URL = 'https://data-staging.naturalcapitalproject.org'
@@ -31,9 +33,9 @@ COLLECTION_VOCAB_ID = 'coming-soon'
 #COLLECTION_VOCAB_ID = 'coming-soon'
 
 # Dev:
-#CKAN_API_URL = 'https://localhost:8443'
-#PLACE_VOCAB_ID = '7320b3ba-1ee9-4fc4-90b3-0240c3aa72df'
-#COLLECTION_VOCAB_ID = '852876fe-49eb-4b88-95d9-44b35facf7ce'
+CKAN_API_URL = 'https://localhost:8443'
+PLACE_VOCAB_ID = '7320b3ba-1ee9-4fc4-90b3-0240c3aa72df'
+COLLECTION_VOCAB_ID = '852876fe-49eb-4b88-95d9-44b35facf7ce'
 
 
 class CKANException(Exception):
@@ -67,9 +69,9 @@ def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
 @app.get("/search_dataset/")
 def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResponse:
     """Search for datasets on the Data Hub that match the provided criteria."""
-    # For dev: need to set verify=False when working with the dev CKAN container
     session = requests.Session()
-    #session.verify = False
+    # For dev: need to set verify=False when working with the dev CKAN container
+    session.verify = False
 
     q = utils.tag_search_string_or(filter_query.tags)
 
@@ -105,13 +107,19 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
                              f" {e}; search parameters: {ckan_query_dict}")
                 raise CKANException(status_code=500, message=f"{e}")
 
-            if not count:
-                count = result['count']
+            if not result.get('count') or not result.get('results'):
+                # This shouldn't happen, but check just in case!
+                LOGGER.error(f"CKAN returned unexpected payload: {result}")
+                raise CKANException(status_code=404,
+                                    message="An error occurred in the CKAN search.")
 
-            for dataset in result['results']:
+            if not count:
+                count = result.get('count', 0)
+
+            for dataset in result.get('results', []):
                 bbox = None
                 index = 0
-                while index < len(dataset['extras']):
+                while index < len(dataset.get('extras', [])):
                     extra = dataset['extras'][index]
                     if extra['key'] == 'spatial':
                         spatial = extra['value']
@@ -124,7 +132,7 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
 
                 dataset_url = None
                 index = 0
-                while index < len(dataset['resources']):
+                while index < len(dataset.get('resources', [])):
                     res = dataset['resources'][index]
                     if utils.resource_type_matches(res['url'], filter_query.datatype):
                         dataset_url = res['url']

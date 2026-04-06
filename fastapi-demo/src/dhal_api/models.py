@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator
 
 
 class DataType(str, Enum):
@@ -29,7 +29,7 @@ class SearchParams(BaseModel):
     sibling: str | None = None
     """The relation tag linking two inputs."""
 
-    @validator('extent')
+    @field_validator('extent')
     def validate_extent_length(cls, v):
         assert len(v) == 4, 'extent must be a list of length 4'
         return v

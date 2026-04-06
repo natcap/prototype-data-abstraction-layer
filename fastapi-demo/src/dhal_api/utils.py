@@ -1,4 +1,4 @@
-from models import DataType
+from dhal_api.models import DataType
 
 
 # Mapping of DataTypes to the values stored in the `sources_res_formats` extra

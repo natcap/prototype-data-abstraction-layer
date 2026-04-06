@@ -33,7 +33,7 @@ class APITests(unittest.TestCase):
         data = resp.json()
         self.assertEqual(data['count'], 1)
 
-        with open(f'{DATA_DIR}/formatted_success_payload_simple.json') as test_resp:
+        with open(f'{DATA_DIR}/formatted_payload_simple.json') as test_resp:
             expected_data = json.load(test_resp)
             self.assertEqual(data, expected_data)
 
@@ -52,9 +52,9 @@ class APITests(unittest.TestCase):
         data = resp.json()
         self.assertEqual(data, {'count': 0, 'datasets': []})
 
-    def test_search_dataset_filter_result(self):
-        """CKAN returns Package where relevant Resource cannot be determined."""
-        with open(f'{DATA_DIR}/ckan_response_data_filter.json') as f:
+    def test_search_dataset_filter_no_matching_resource(self):
+        """Filter out Package where Resource is ambiguous: no matching filetype."""
+        with open(f'{DATA_DIR}/ckan_response_no_resource_match.json') as f:
             success_resp = json.load(f)
         with patch('dhal_api.main.RemoteCKAN.call_action') as mock_ckan:
             mock_ckan.return_value = success_resp
@@ -69,7 +69,28 @@ class APITests(unittest.TestCase):
         data = resp.json()
         self.assertEqual(data['count'], 1)
 
-        with open(f'{DATA_DIR}/formatted_success_payload_filter.json') as test_resp:
+        with open(f'{DATA_DIR}/formatted_payload_no_resource_match.json') as test_resp:
+            expected_data = json.load(test_resp)
+            self.assertEqual(data, expected_data)
+
+    def test_search_dataset_filter_multiple_matching_resources(self):
+        """Filter out Package where Resource is ambiguous: multiple matches."""
+        with open(f'{DATA_DIR}/ckan_response_multiple_resource_match.json') as f:
+            success_resp = json.load(f)
+        with patch('dhal_api.main.RemoteCKAN.call_action') as mock_ckan:
+            mock_ckan.return_value = success_resp
+
+            params = {
+                "tags": ["LULC"],
+                "datatype": "raster"
+            }
+            resp = client.get("/search_dataset/", params=params)
+
+        self.assertEqual(resp.status_code, 200)
+        data = resp.json()
+        self.assertEqual(data['count'], 1)
+
+        with open(f'{DATA_DIR}/formatted_payload_multiple_resource_match.json') as test_resp:
             expected_data = json.load(test_resp)
             self.assertEqual(data, expected_data)
 

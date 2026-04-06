@@ -91,15 +91,15 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
         offset = 0
         count = None
 
-        ckan_query_dict = {
-            'q': q,
-            'fq_list': fq_list,
-            'start': offset,
-            'extras': extras,
-            'sort': 'score desc' # Most relevant results first
-        }
-
         while True:
+            ckan_query_dict = {
+                'q': q,
+                'fq_list': fq_list,
+                'start': offset,
+                'extras': extras,
+                'sort': 'score desc' # Most relevant results first
+            }
+
             try:
                 result = catalog.action.package_search(**ckan_query_dict)
             except ckanapi.errors.CKANAPIError as e:
@@ -132,15 +132,21 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
                     index += 1
 
                 dataset_url = None
+                possible_dataset_urls_count = 0
                 index = 0
                 while index < len(dataset.get('resources', [])):
                     res = dataset['resources'][index]
                     if utils.resource_type_matches(res['url'], filter_query.datatype):
                         dataset_url = res['url']
-                        break
+                        possible_dataset_urls_count += 1
+                        if possible_dataset_urls_count > 1:
+                            # If the resource is ambiguous, skip
+                            dataset_url = None
+                            break
                     index += 1
+
                 if not dataset_url:
-                    # If no matching resource can be determined for some reason, skip
+                    # If no matching resource can be determined, skip
                     offset += 1
                     continue
 

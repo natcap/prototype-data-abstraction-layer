@@ -1,0 +1,35 @@
+{
+    "count": 1,
+    "datasets": [
+        {
+            "dataset_url": "https://storage.googleapis.com/natcap-data-cache/global/esa2021/esa2021.tif",
+            "source_catalog_url": "https://localhost:8443/dataset/sts-476a98658e58fb224e1c6fdade4cc5ccbc208b441e3f081da455db17eb6f738f",
+            "name": "ESA WorldCover 2021",
+            "description": "This dataset provides a Global ESA 2021 (Version 2) Land Use Land Cover raster file at a resolution of 10m. Included  LULC classes are: Tree cover, Shrubland, Grassland, Cropland, Built-up, Bare/sparse vegetation, Snow and Ice, Permenent water bodies, Herbaceous wetland, Mangroves, and Moss and lichen. Please download the esa2021_classes.csv file alongside the raster for access to the classes legend. This data was accessed from https://worldcover2021.esa.int/download and each tile was downloaded and stitched together into a Global raster by analysts at the Natural Capital Project. The global layer was then converted into a Cloud Optimized GeoTiff with internal overviews. Citation information, and technical documentation, can be found at: https://worldcover2021.esa.int/documentation",
+            "extent": [
+                -180.0,
+                -59.999999999995005,
+                179.99999999998747,
+                84.00000000000001
+            ],
+            "tags": [
+                "ESA",
+                "EUROPEAN SPACE AGENCY",
+                "LAND USE LAND COVER",
+                "LULC"
+            ],
+            "places": [
+                "GLOBAL"
+            ],
+            "collection": [],
+            "license": {
+                "id": "CC-BY-4.0",
+                "title": "Creative Commons Attribution 4.0",
+                "url": "https://creativecommons.org/licenses/by/4.0/"
+            },
+            "author": "Natural Capital Project, Stanford University",
+            "created": "2025-06-27T19:47:57.098766",
+            "last_updated": "2025-08-28T19:05:48.398372"
+        }
+    ]
+}

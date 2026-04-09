@@ -1,0 +1,480 @@
+{
+    "count": 2,
+    "facets": {},
+    "results": [
+        {
+            "author": "Natural Capital Alliance, Stanford University",
+            "author_email": "datahub@naturalcapitalalliance.org",
+            "collection": [],
+            "creator_user_id": "7a4d74f2-b39a-4c5b-ab4a-41bbcabfd470",
+            "id": "f2710799-1200-4cd7-a6ee-21f347f95f3a",
+            "isopen": true,
+            "license_id": "other-pd",
+            "license_title": "Other (Public Domain)",
+            "metadata_created": "2025-08-11T14:01:37.988594",
+            "metadata_modified": "2026-03-31T15:51:45.137092",
+            "name": "sts-c5da8ce35d001559105bf25958c644ef0207b47e6a597f1efb7cb6742225e422",
+            "notes": "This dataset is a product of NOAA's NGS CUSP (Continually Updated Shoreline Product) that provides the most current shorelines of the US and US territories and references mean high water. The data provided by NASA was downloaded and stitched into a single shapefile by members of the NatCap team. This data is continuously updated by the NOAA team and was last downloaded and stitched on 2025-08-07 for the Data Hub. Data will continue to be updated periodically. For more information on the data, including details on the source of the dataset, please see the accompanying metadata (YML) file. For more information from NOAA directly, please visit https://nsde.ngs.noaa.gov/.",
+            "num_resources": 2,
+            "num_tags": 8,
+            "organization": {
+                "id": "db21312f-31cd-4be0-b04a-451b45b6facc",
+                "name": "natcap",
+                "title": "natcap",
+                "type": "organization",
+                "description": "",
+                "image_url": "",
+                "created": "2025-05-15T15:27:25.720453",
+                "is_organization": true,
+                "approval_status": "approved",
+                "state": "active"
+            },
+            "owner_org": "db21312f-31cd-4be0-b04a-451b45b6facc",
+            "place": [
+                "PACIFIC ISLANDS",
+                "PUERTO RICO",
+                "UNITED STATES",
+                "US VIRGIN ISLANDS"
+            ],
+            "private": false,
+            "state": "active",
+            "suggested_citation": "",
+            "title": "NOAA CUSP US Shorelines",
+            "type": "dataset",
+            "version": "",
+            "extras": [
+                {
+                    "key": "center_lat_lon",
+                    "value": "[38.112438411911604, -82.59775114644056]"
+                },
+                {
+                    "key": "mappreview",
+                    "value": "{\"map\": {\"minzoom\": 1, \"maxzoom\": 16, \"bounds\": [-179.1501204, -14.548575, 174.1789486, 71.3877324]}, \"layers\": [{\"name\": \"noaa_us_shorelines.mvt\", \"type\": \"vector\", \"url\": \"https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines/noaa_us_shorelines.mvt\", \"bounds\": [-179.1501204, -14.548575, 174.1789486, 71.3877324], \"vector_type\": \"LineString\", \"feature_count\": 968003}]}"
+                },
+                {
+                    "key": "natcap_last_updated",
+                    "value": "2026-03-31T15:51:45.110953+00:00"
+                },
+                {
+                    "key": "sources",
+                    "value": "[\"noaa_us_shorelines/noaa_us_shorelines.cpg\", \"noaa_us_shorelines/noaa_us_shorelines.dbf\", \"noaa_us_shorelines/noaa_us_shorelines.prj\", \"noaa_us_shorelines/noaa_us_shorelines.shp\", \"noaa_us_shorelines/noaa_us_shorelines.shp.yml\", \"noaa_us_shorelines/noaa_us_shorelines.shx\"]"
+                },
+                {
+                    "key": "sources_res_formats",
+                    "value": "[\"shp\", \"yml\"]"
+                }
+            ],
+            "resources": [
+                {
+                    "cache_last_updated": "2026-03-31T11:48:07.601417",
+                    "cache_url": null,
+                    "created": "2026-03-31T11:48:07.601417",
+                    "datastore_active": false,
+                    "description": "Geometamaker YML",
+                    "format": "YML",
+                    "hash": "sha256:6c9087e2ea4c1c4ab1169181ac2b79e689da4dc59e6bb28cc77df1bb3658728b",
+                    "id": "f59731e9-55dd-40b2-a1f0-3024805edaaa",
+                    "last_modified": "2026-03-31T15:51:44.164720",
+                    "metadata_modified": "2026-03-31T15:51:44.300454",
+                    "mimetype": null,
+                    "mimetype_inner": null,
+                    "name": "noaa_us_shorelines.zip.yml",
+                    "package_id": "f2710799-1200-4cd7-a6ee-21f347f95f3a",
+                    "position": 0,
+                    "resource_type": null,
+                    "size": 2573,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://localhost:8443/dataset/f2710799-1200-4cd7-a6ee-21f347f95f3a/resource/f59731e9-55dd-40b2-a1f0-3024805edaaa/download/noaa_us_shorelines.zip.yml",
+                    "url_type": "upload"
+                },
+                {
+                    "cache_last_updated": "2026-03-31T11:48:07.601542",
+                    "cache_url": null,
+                    "created": "2026-03-31T11:48:07.601542",
+                    "datastore_active": false,
+                    "description": "This dataset is a product of NOAA's NGS CUSP (Continually Updated Shoreline Product) that provides the most current shorelines of the US and US territories and references mean high water. The data provided by NASA was downloaded and stitched into a single shapefile by members of the NatCap team. This data is continuously updated by the NOAA team and was last downloaded and stitched on 2025-08-07 for the Data Hub. Data will continue to be updated periodically. For more information on the data, including details on the source of the dataset, please see the accompanying metadata (YML) file. For more information from NOAA directly, please visit https://nsde.ngs.noaa.gov/.",
+                    "format": "ZIP",
+                    "hash": "crc32c:yPuLhA==",
+                    "id": "e81edbe4-a104-4a19-b8f5-d07a06d2c52c",
+                    "last_modified": null,
+                    "metadata_modified": "2026-03-31T15:51:44.730744",
+                    "mimetype": "application/zip",
+                    "mimetype_inner": null,
+                    "name": "noaa_us_shorelines.zip",
+                    "package_id": "f2710799-1200-4cd7-a6ee-21f347f95f3a",
+                    "position": 1,
+                    "resource_type": null,
+                    "size": 2503626407,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines.zip",
+                    "url_type": null
+                }
+            ],
+            "tags": [
+                {
+                    "display_name": "COASTAL",
+                    "id": "7388491e-51b1-4feb-bcff-70d70bdc3a28",
+                    "name": "COASTAL",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "COASTLINE",
+                    "id": "ee468205-7c0d-4b2a-b2fe-43500a1ba812",
+                    "name": "COASTLINE",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "NOAA",
+                    "id": "39092611-518c-4dc0-9e9a-cfe3f1088905",
+                    "name": "NOAA",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "PACIFIC ISLANDS",
+                    "id": "7dedab29-44a1-4616-99e2-b6d0b64c2506",
+                    "name": "PACIFIC ISLANDS",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "PUERTO RICO",
+                    "id": "634840da-7253-4f75-b8f5-ce546656705f",
+                    "name": "PUERTO RICO",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "SHORELINES",
+                    "id": "d4e35a6d-fdbc-417a-985c-33b70370578c",
+                    "name": "SHORELINES",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "UNITED STATES",
+                    "id": "f02185bb-d011-45eb-a32d-6bfa985be56f",
+                    "name": "UNITED STATES",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "US VIRGIN ISLANDS",
+                    "id": "1e1a856e-ba8a-4ed6-a163-bda61803f99e",
+                    "name": "US VIRGIN ISLANDS",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                }
+            ],
+            "groups": [],
+            "relationships_as_subject": [],
+            "relationships_as_object": [],
+            "tracking_summary": {
+                "total": 0,
+                "recent": 0
+            }
+        },
+        {
+            "author": "Natural Capital Alliance, Stanford University",
+            "author_email": "datahub@naturalcapitalalliance.org",
+            "collection": [],
+            "creator_user_id": "7a4d74f2-b39a-4c5b-ab4a-41bbcabfd470",
+            "id": "437b089c-b10c-423f-8dd5-a07400d9104d",
+            "isopen": true,
+            "license_id": "other-pd",
+            "license_title": "Other (Public Domain)",
+            "metadata_created": "2026-02-24T19:00:04.857844",
+            "metadata_modified": "2026-03-31T16:05:07.761792",
+            "name": "sts-bf98ba4d4020c364153efb4a324d4e39d2d9e3cc9978d2afdc729fac664069cf",
+            "notes": "This dataset is a product of NOAA's NGS CUSP (Continually Updated Shoreline Product) that provides the most current shorelines of the US and US territories and references mean high water. The data provided by NASA was downloaded and stitched into a single shapefile by members of the NatCap team. This data is continuously updated by the NOAA team and was last downloaded and stitched on 2025-08-01 for the Data Hub. Data will continue to be updated periodically. For more information on the data, including details on the source of the dataset, please see the accompanying metadata (YML) file. For more information from NOAA directly, please visit https://nsde.ngs.noaa.gov/.",
+            "num_resources": 6,
+            "num_tags": 8,
+            "organization": {
+                "id": "db21312f-31cd-4be0-b04a-451b45b6facc",
+                "name": "natcap",
+                "title": "natcap",
+                "type": "organization",
+                "description": "",
+                "image_url": "",
+                "created": "2025-05-15T15:27:25.720453",
+                "is_organization": true,
+                "approval_status": "approved",
+                "state": "active"
+            },
+            "owner_org": "db21312f-31cd-4be0-b04a-451b45b6facc",
+            "place": [
+                "PACIFIC ISLANDS",
+                "PUERTO RICO",
+                "UNITED STATES",
+                "US VIRGIN ISLANDS"
+            ],
+            "private": false,
+            "state": "active",
+            "suggested_citation": "",
+            "title": "NOAA CUSP US Shorelines",
+            "type": "dataset",
+            "version": "",
+            "extras": [
+                {
+                    "key": "center_lat_lon",
+                    "value": "[38.112438411911604, -82.59775114644056]"
+                },
+                {
+                    "key": "mappreview",
+                    "value": "{\"map\": {\"minzoom\": 1, \"maxzoom\": 16, \"bounds\": [-179.1501204, -14.548575, 174.1789486, 71.3877324]}, \"layers\": [{\"name\": \"noaa_us_shorelines.mvt\", \"type\": \"vector\", \"url\": \"https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines/noaa_us_shorelines.mvt\", \"bounds\": [-179.1501204, -14.548575, 174.1789486, 71.3877324], \"vector_type\": \"LineString\", \"feature_count\": 968003}]}"
+                },
+                {
+                    "key": "natcap_last_updated",
+                    "value": "2026-03-31T16:05:07.732617+00:00"
+                },
+                {
+                    "key": "sources",
+                    "value": "[\"noaa_us_shorelines.shp\", \"noaa_us_shorelines.shx\", \"noaa_us_shorelines.dbf\", \"noaa_us_shorelines.cpg\", \"noaa_us_shorelines.prj\"]"
+                },
+                {
+                    "key": "sources_res_formats",
+                    "value": "[\"shp\", \"yml\"]"
+                },
+                {
+                    "key": "spatial",
+                    "value": "{\"type\": \"Polygon\", \"coordinates\": [[[-179.1501203785526, 71.38773242211363], [-179.1501203785526, -14.548575000435905], [174.17894858272027, -14.548575000435905], [174.17894858272027, 71.38773242211363], [-179.1501203785526, 71.38773242211363]]]}"
+                }
+            ],
+            "resources": [
+                {
+                    "cache_last_updated": "2026-03-31T11:57:42.496511",
+                    "cache_url": null,
+                    "created": "2026-03-31T11:57:42.496511",
+                    "datastore_active": false,
+                    "description": "Geometamaker YML",
+                    "format": "YML",
+                    "hash": "sha256:681c7c34ba051d63fff8c922ac23b0eb8253910e88d1556d51c2d84dd21d18e6",
+                    "id": "eeb9a7f3-a53f-4922-bbed-6c76b02d36e5",
+                    "last_modified": "2026-03-31T16:05:05.440586",
+                    "metadata_modified": "2026-03-31T16:05:05.604837",
+                    "mimetype": null,
+                    "mimetype_inner": null,
+                    "name": "noaa_us_shorelines.shp.yml",
+                    "package_id": "437b089c-b10c-423f-8dd5-a07400d9104d",
+                    "position": 0,
+                    "resource_type": null,
+                    "size": 4484,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://localhost:8443/dataset/437b089c-b10c-423f-8dd5-a07400d9104d/resource/eeb9a7f3-a53f-4922-bbed-6c76b02d36e5/download/noaa_us_shorelines.shp.yml",
+                    "url_type": "upload"
+                },
+                {
+                    "cache_last_updated": "2026-03-31T11:57:42.496661",
+                    "cache_url": null,
+                    "created": "2026-03-31T11:57:42.496661",
+                    "datastore_active": false,
+                    "description": "This dataset is a product of NOAA's NGS CUSP (Continually Updated Shoreline Product) that provides the most current shorelines of the US and US territories and references mean high water. The data provided by NASA was downloaded and stitched into a single shapefile by members of the NatCap team. This data is continuously updated by the NOAA team and was last downloaded and stitched on 2025-08-01 for the Data Hub. Data will continue to be updated periodically. For more information on the data, including details on the source of the dataset, please see the accompanying metadata (YML) file. For more information from NOAA directly, please visit https://nsde.ngs.noaa.gov/.",
+                    "format": "SHP",
+                    "hash": "crc32c:lLjJ+A==",
+                    "id": "e2f42624-7c92-4b39-ba24-cddd3e9564ad",
+                    "last_modified": null,
+                    "metadata_modified": "2026-03-31T16:05:05.774718",
+                    "mimetype": "application/octet-stream",
+                    "mimetype_inner": null,
+                    "name": "noaa_us_shorelines.shp",
+                    "package_id": "437b089c-b10c-423f-8dd5-a07400d9104d",
+                    "position": 1,
+                    "resource_type": null,
+                    "size": 1222621820,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines/noaa_us_shorelines.shp",
+                    "url_type": null
+                },
+                {
+                    "cache_last_updated": "2026-03-31T11:57:45.649508",
+                    "cache_url": null,
+                    "created": "2026-03-31T11:57:45.649508",
+                    "datastore_active": false,
+                    "description": "Resource",
+                    "format": "SHP",
+                    "hash": "crc32c:843+zA==",
+                    "id": "07836721-8a01-4acc-a4bd-eecac139067e",
+                    "last_modified": null,
+                    "metadata_modified": "2026-03-31T16:05:05.955094",
+                    "mimetype": "application/octet-stream",
+                    "mimetype_inner": null,
+                    "name": "noaa_us_shorelines.shx",
+                    "package_id": "437b089c-b10c-423f-8dd5-a07400d9104d",
+                    "position": 2,
+                    "resource_type": null,
+                    "size": 7744124,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines/noaa_us_shorelines.shx",
+                    "url_type": null
+                },
+                {
+                    "cache_last_updated": "2026-03-31T11:57:46.626088",
+                    "cache_url": null,
+                    "created": "2026-03-31T11:57:46.626088",
+                    "datastore_active": false,
+                    "description": "Resource",
+                    "format": "SHP",
+                    "hash": "crc32c:C+bFkQ==",
+                    "id": "3a836821-7f2d-4881-8176-b60584e5547f",
+                    "last_modified": null,
+                    "metadata_modified": "2026-03-31T16:05:06.130172",
+                    "mimetype": "application/dbase",
+                    "mimetype_inner": null,
+                    "name": "noaa_us_shorelines.dbf",
+                    "package_id": "437b089c-b10c-423f-8dd5-a07400d9104d",
+                    "position": 3,
+                    "resource_type": null,
+                    "size": 976715509,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines/noaa_us_shorelines.dbf",
+                    "url_type": null
+                },
+                {
+                    "cache_last_updated": "2026-03-31T11:57:47.598971",
+                    "cache_url": null,
+                    "created": "2026-03-31T11:57:47.598971",
+                    "datastore_active": false,
+                    "description": "Resource",
+                    "format": "CPG",
+                    "hash": "crc32c:D+zN3A==",
+                    "id": "77ad7b05-55b5-4637-a6b8-52e679238c17",
+                    "last_modified": null,
+                    "metadata_modified": "2026-03-31T16:05:06.490801",
+                    "mimetype": null,
+                    "mimetype_inner": null,
+                    "name": "noaa_us_shorelines.cpg",
+                    "package_id": "437b089c-b10c-423f-8dd5-a07400d9104d",
+                    "position": 4,
+                    "resource_type": null,
+                    "size": 5,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines/noaa_us_shorelines.cpg",
+                    "url_type": null
+                },
+                {
+                    "cache_last_updated": "2026-03-31T11:57:49.037524",
+                    "cache_url": null,
+                    "created": "2026-03-31T11:57:49.037524",
+                    "datastore_active": false,
+                    "description": "Resource",
+                    "format": "PRJ",
+                    "hash": "crc32c:PKFdqg==",
+                    "id": "48e71c12-f84e-4a60-ad0a-1179c608c29d",
+                    "last_modified": null,
+                    "metadata_modified": "2026-03-31T16:05:06.695662",
+                    "mimetype": null,
+                    "mimetype_inner": null,
+                    "name": "noaa_us_shorelines.prj",
+                    "package_id": "437b089c-b10c-423f-8dd5-a07400d9104d",
+                    "position": 5,
+                    "resource_type": null,
+                    "size": 145,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines/noaa_us_shorelines.prj",
+                    "url_type": null
+                }
+            ],
+            "tags": [
+                {
+                    "display_name": "COASTAL",
+                    "id": "7388491e-51b1-4feb-bcff-70d70bdc3a28",
+                    "name": "COASTAL",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "COASTLINE",
+                    "id": "ee468205-7c0d-4b2a-b2fe-43500a1ba812",
+                    "name": "COASTLINE",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "NOAA",
+                    "id": "39092611-518c-4dc0-9e9a-cfe3f1088905",
+                    "name": "NOAA",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "PACIFIC ISLANDS",
+                    "id": "7dedab29-44a1-4616-99e2-b6d0b64c2506",
+                    "name": "PACIFIC ISLANDS",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "PUERTO RICO",
+                    "id": "634840da-7253-4f75-b8f5-ce546656705f",
+                    "name": "PUERTO RICO",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "SHORELINES",
+                    "id": "d4e35a6d-fdbc-417a-985c-33b70370578c",
+                    "name": "SHORELINES",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "UNITED STATES",
+                    "id": "f02185bb-d011-45eb-a32d-6bfa985be56f",
+                    "name": "UNITED STATES",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "US VIRGIN ISLANDS",
+                    "id": "1e1a856e-ba8a-4ed6-a163-bda61803f99e",
+                    "name": "US VIRGIN ISLANDS",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                }
+            ],
+            "groups": [],
+            "relationships_as_subject": [],
+            "relationships_as_object": [],
+            "tracking_summary": {
+                "total": 0,
+                "recent": 0
+            }
+        }
+    ],
+    "sort": "score desc",
+    "search_facets": {}
+}

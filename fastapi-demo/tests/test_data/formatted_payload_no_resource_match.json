@@ -1,0 +1,38 @@
+{
+    "count": 1,
+    "datasets": [
+        {
+            "dataset_url": "https://data.naturalcapitalalliance.stanford.edu/download/global/noaa-us-shorelines/noaa_us_shorelines/noaa_us_shorelines.shp",
+            "source_catalog_url": "https://localhost:8443/dataset/sts-bf98ba4d4020c364153efb4a324d4e39d2d9e3cc9978d2afdc729fac664069cf",
+            "name": "NOAA CUSP US Shorelines",
+            "description": "This dataset is a product of NOAA's NGS CUSP (Continually Updated Shoreline Product) that provides the most current shorelines of the US and US territories and references mean high water. The data provided by NASA was downloaded and stitched into a single shapefile by members of the NatCap team. This data is continuously updated by the NOAA team and was last downloaded and stitched on 2025-08-01 for the Data Hub. Data will continue to be updated periodically. For more information on the data, including details on the source of the dataset, please see the accompanying metadata (YML) file. For more information from NOAA directly, please visit https://nsde.ngs.noaa.gov/.",
+            "extent": [
+                -179.1501203785526,
+                -14.548575000435905,
+                174.17894858272027,
+                71.38773242211363
+            ],
+            "tags": [
+                "COASTAL",
+                "COASTLINE",
+                "NOAA",
+                "SHORELINES"
+            ],
+            "places": [
+                "PACIFIC ISLANDS",
+                "PUERTO RICO",
+                "UNITED STATES",
+                "US VIRGIN ISLANDS"
+            ],
+            "collection": [],
+            "license": {
+                "id": "other-pd",
+                "title": "Other (Public Domain)",
+                "url": null
+            },
+            "author": "Natural Capital Alliance, Stanford University",
+            "created": "2026-02-24T19:00:04.857844",
+            "last_updated": "2026-03-31T16:05:07.761792"
+        }
+    ]
+}

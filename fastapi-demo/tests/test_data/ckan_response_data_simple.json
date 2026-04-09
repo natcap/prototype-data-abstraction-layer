@@ -1,0 +1,170 @@
+{
+    "count": 1,
+    "facets": {},
+    "results": [
+        {
+            "author": "Natural Capital Project, Stanford University",
+            "author_email": "datahub@naturalcapitalproject.org",
+            "creator_user_id": "7a4d74f2-b39a-4c5b-ab4a-41bbcabfd470",
+            "id": "7206c4bb-f1ed-492f-9029-41d58cdc7df3",
+            "isopen": true,
+            "license_id": "CC-BY-4.0",
+            "license_title": "Creative Commons Attribution 4.0",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
+            "metadata_created": "2025-06-13T19:53:53.233509",
+            "metadata_modified": "2025-08-28T19:06:00.531711",
+            "name": "sts-2b13519934614f4b36243eaeab5c712f37043413fb6fc314d588229a47808157",
+            "notes": "NASA DEM HGT version 1 - Global Layer. 30m pixel size. NASADEM 1 arc second (30m) elevation data (collected over the Grand Canyon between 2000-02-11 to 2000-02-21). All tiles were downloaded from NASA Earth Data and stitched into one Cloud Optimized GeoTiff raster. More information on the dataset can be found in the metadata YML file available for download. More information on the source data can found here: https://lpdaac.usgs.gov/products/nasadem_hgtv001/.",
+            "num_resources": 2,
+            "num_tags": 6,
+            "organization": {
+                "id": "db21312f-31cd-4be0-b04a-451b45b6facc",
+                "name": "natcap",
+                "title": "natcap",
+                "type": "organization",
+                "description": "",
+                "image_url": "",
+                "created": "2025-05-15T15:27:25.720453",
+                "is_organization": true,
+                "approval_status": "approved",
+                "state": "active"
+            },
+            "owner_org": "db21312f-31cd-4be0-b04a-451b45b6facc",
+            "private": false,
+            "state": "active",
+            "suggested_citation": "NASA JPL (2020).NASADEM Merged DEM Global 1 arc second V001 [Data set]. NASA EOSDIS Land Processes Distributed Active Archive Center. Accessed 2024-07-02 from https://doi.org/10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001",
+            "title": "NASA HGT DEM - Global Dataset",
+            "type": "dataset",
+            "version": "",
+            "extras": [
+                {
+                    "key": "mappreview",
+                    "value": "{\"map\": {\"minzoom\": [1], \"maxzoom\": [10], \"bounds\": [-179.0001388888889, -56.00013888890444, 179.00013888893648, 61.00013888888889]}, \"layers\": [{\"name\": \"nasa-hgt-v1-1s.tif\", \"type\": \"raster\", \"url\": \"https://storage.googleapis.com/natcap-data-cache/global/nasa-hgt-v1-1s/nasa-hgt-v1-1s.tif\", \"bounds\": [-179.0001388888889, -56.00013888890444, 179.00013888893648, 61.00013888888889], \"minzoom\": 1, \"maxzoom\": 10, \"pixel_min_value\": -332.0, \"pixel_max_value\": 6670.0, \"pixel_percentile_2\": 0.0, \"pixel_percentile_20\": 5.0, \"pixel_percentile_40\": 178.0, \"pixel_percentile_60\": 399.0, \"pixel_percentile_80\": 885.0, \"pixel_percentile_98\": 3683.0}]}"
+                },
+                {
+                    "key": "natcap_last_updated",
+                    "value": "2025-08-28T19:06:00.484114+00:00"
+                },
+                {
+                    "key": "sources",
+                    "value": "[\"https://storage.googleapis.com/natcap-data-cache/global/nasa-hgt-v1-1s/nasa-hgt-v1-1s.tif\"]"
+                },
+                {
+                    "key": "sources_res_formats",
+                    "value": "[\"tif\", \"yml\"]"
+                },
+                {
+                    "key": "spatial",
+                    "value": "{\"type\": \"Polygon\", \"coordinates\": [[[-179.0001388888889, 61.00013888888889], [-179.0001388888889, -56.000138888904445], [179.0001388889365, -56.000138888904445], [179.0001388889365, 61.00013888888889], [-179.0001388888889, 61.00013888888889]]]}"
+                }
+            ],
+            "resources": [
+                {
+                    "cache_last_updated": "2025-08-28T15:05:57.049907",
+                    "cache_url": null,
+                    "created": "2025-08-28T15:05:57.049907",
+                    "datastore_active": false,
+                    "description": "Geometamaker YML",
+                    "format": "YML",
+                    "hash": "sha256:b2f31aeae0d19807db653b0c9f7ed1bdc158526109adbb719799dfa3c733ae08",
+                    "id": "098ec33a-d0e2-442e-a5ab-6a19bef10341",
+                    "last_modified": "2025-08-28T19:05:59.054274",
+                    "metadata_modified": "2025-08-28T19:05:59.197805",
+                    "mimetype": null,
+                    "mimetype_inner": null,
+                    "name": "nasa-hgt-v1-1s.tif.yml",
+                    "package_id": "7206c4bb-f1ed-492f-9029-41d58cdc7df3",
+                    "position": 0,
+                    "resource_type": null,
+                    "size": 2614,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://localhost:8443/dataset/7206c4bb-f1ed-492f-9029-41d58cdc7df3/resource/098ec33a-d0e2-442e-a5ab-6a19bef10341/download/nasa-hgt-v1-1s.tif.yml",
+                    "url_type": "upload"
+                },
+                {
+                    "cache_last_updated": "2025-08-28T15:05:57.050064",
+                    "cache_url": null,
+                    "created": "2025-08-28T15:05:57.050064",
+                    "datastore_active": false,
+                    "description": "NASA DEM HGT version 1 - Global Layer. 30m pixel size. NASADEM 1 arc second (30m) elevation data (collected over the Grand Canyon between 2000-02-11 to 2000-02-21). All tiles were downloaded from NASA Earth Data and stitched into one Cloud Optimized GeoTiff raster. More information on the dataset can be found in the metadata YML file available for download. More information on the source data can found here: https://lpdaac.usgs.gov/products/nasadem_hgtv001/.",
+                    "format": "GeoTIFF",
+                    "hash": "crc32c:m4AdoQ==",
+                    "id": "f5caa9a3-1540-4a57-be7e-655974a37ec5",
+                    "last_modified": null,
+                    "metadata_modified": "2025-08-28T19:05:59.553125",
+                    "mimetype": "image/tiff",
+                    "mimetype_inner": null,
+                    "name": "nasa-hgt-v1-1s.tif",
+                    "package_id": "7206c4bb-f1ed-492f-9029-41d58cdc7df3",
+                    "position": 1,
+                    "resource_type": null,
+                    "size": 183205879271,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://storage.googleapis.com/natcap-data-cache/global/nasa-hgt-v1-1s/nasa-hgt-v1-1s.tif",
+                    "url_type": null
+                }
+            ],
+            "tags": [
+                {
+                    "display_name": "DEM",
+                    "id": "8b8db20a-9877-46a0-81f6-d4d8a7070caf",
+                    "name": "DEM",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "DIGITAL ELEVATION MODEL",
+                    "id": "39b4c954-3807-4e61-a473-67626e3809aa",
+                    "name": "DIGITAL ELEVATION MODEL",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "GLOBAL",
+                    "id": "8c764da5-ed81-4744-be5f-b9ee594f0d97",
+                    "name": "GLOBAL",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "INVEST INPUT",
+                    "id": "8a694d66-9cb0-4869-b2fd-2e113e57f89a",
+                    "name": "INVEST INPUT",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "INVEST-READY",
+                    "id": "66677098-3613-4a62-b197-bfa99b8493cc",
+                    "name": "INVEST-READY",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "NASA",
+                    "id": "61da4878-9e0b-48bb-a951-2b94ec1205d2",
+                    "name": "NASA",
+                    "state": "active",
+                    "vocabulary_id": null
+                }
+            ],
+            "groups": [],
+            "relationships_as_subject": [],
+            "relationships_as_object": [],
+            "tracking_summary": {
+                "total": 0,
+                "recent": 0
+            }
+        }
+    ],
+    "sort": "score desc",
+    "search_facets": {}
+}

@@ -1,0 +1,501 @@
+{
+    "count": 3,
+    "facets": {},
+    "results": [
+        {
+            "author": "Natural Capital Project",
+            "author_email": "datahub@naturalcapitalproject.org",
+            "creator_user_id": "7a4d74f2-b39a-4c5b-ab4a-41bbcabfd470",
+            "id": "5931cb43-714b-4fb0-ae25-4aea24ab04f2",
+            "isopen": true,
+            "license_id": "CC-BY-4.0",
+            "license_title": "Creative Commons Attribution 4.0",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
+            "metadata_created": "2026-01-07T17:49:09.299197",
+            "metadata_modified": "2026-01-07T17:49:11.170446",
+            "name": "sts-978d217bca7dcad70896ceae2d1cd484979c7a4a0f139836c16d462336a877ea",
+            "notes": "Global Land Cover Dataset (Adapted from GLC_FCS30D - v1) at 30m resolution for years 1985-2000. This dataset builds off the global, fine-scale land cover dynamic monitoring product (GLC_FCS30D) with a temporal coverage of 1985-2022, to provide global layers as Cloud Optimized geoTIFFs. Data was downloaded from the source and processed by NatCap members at the University of Minnesota. For more information on the processing steps, source data, and land use classifications, please see the 'Lineage' section of the accompanying metadata YAML file.",
+            "num_resources": 2,
+            "num_tags": 4,
+            "organization": {
+                "id": "db21312f-31cd-4be0-b04a-451b45b6facc",
+                "name": "natcap",
+                "title": "natcap",
+                "type": "organization",
+                "description": "",
+                "image_url": "",
+                "created": "2025-05-15T15:27:25.720453",
+                "is_organization": true,
+                "approval_status": "approved",
+                "state": "active"
+            },
+            "owner_org": "db21312f-31cd-4be0-b04a-451b45b6facc",
+            "private": false,
+            "state": "active",
+            "suggested_citation": "",
+            "title": "1985-2000 Global Land Cover Dataset (Adapted from GLC_FCS30D)",
+            "type": "dataset",
+            "version": "",
+            "extras": [
+                {
+                    "key": "natcap_last_updated",
+                    "value": "2026-01-07T17:49:11.133722+00:00"
+                },
+                {
+                    "key": "sources",
+                    "value": "[\"lulc_glc_fcs30d_1985_2000/lulc_glc_fcs30d_1985.tif\", \"lulc_glc_fcs30d_1985_2000/lulc_glc_fcs30d_1985.tif.yml\", \"lulc_glc_fcs30d_1985_2000/lulc_glc_fcs30d_1990.tif\", \"lulc_glc_fcs30d_1985_2000/lulc_glc_fcs30d_1990.tif.yml\", \"lulc_glc_fcs30d_1985_2000/lulc_glc_fcs30d_1995.tif\", \"lulc_glc_fcs30d_1985_2000/lulc_glc_fcs30d_1995.tif.yml\", \"lulc_glc_fcs30d_1985_2000/lulc_glc_fcs30d_2000.tif\", \"lulc_glc_fcs30d_1985_2000/lulc_glc_fcs30d_2000.tif.yml\"]"
+                },
+                {
+                    "key": "sources_res_formats",
+                    "value": "[\"tif\", \"yml\"]"
+                }
+            ],
+            "resources": [
+                {
+                    "cache_last_updated": "2026-01-07T12:48:55.542487",
+                    "cache_url": null,
+                    "created": "2026-01-07T12:48:55.542487",
+                    "datastore_active": false,
+                    "description": "Geometamaker YML",
+                    "format": "YML",
+                    "hash": "crc32c:LN9rug==",
+                    "id": "39e63100-50bb-4eca-82f4-d00a61ef5a7a",
+                    "last_modified": null,
+                    "metadata_modified": "2026-01-07T17:49:09.814734",
+                    "mimetype": null,
+                    "mimetype_inner": null,
+                    "name": "lulc_glc_fcs30d_1985_2000.zip.yml",
+                    "package_id": "5931cb43-714b-4fb0-ae25-4aea24ab04f2",
+                    "position": 0,
+                    "resource_type": null,
+                    "size": 2534,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/collaborator-data/lulc_glc_fcs30d_jjohnson/lulc_glc_fcs30d_1985_2000.zip.yml",
+                    "url_type": null
+                },
+                {
+                    "cache_last_updated": "2026-01-07T12:48:58.828022",
+                    "cache_url": null,
+                    "created": "2026-01-07T12:48:58.828022",
+                    "datastore_active": false,
+                    "description": "Global Land Cover Dataset (Adapted from GLC_FCS30D - v1) at 30m resolution for years 1985-2000. This dataset builds off the global, fine-scale land cover dynamic monitoring product (GLC_FCS30D) with a temporal coverage of 1985-2022, to provide global layers as Cloud Optimized geoTIFFs. Data was downloaded from the source and processed by NatCap members at the University of Minnesota. For more information on the processing steps, source data, and land use classifications, please see the 'Lineage' section of the accompanying metadata YAML file.",
+                    "format": "ZIP",
+                    "hash": "crc32c:cdqJNg==",
+                    "id": "31b0820c-5c51-48fc-9276-6b27387cbe47",
+                    "last_modified": null,
+                    "metadata_modified": "2026-01-07T17:49:10.474525",
+                    "mimetype": "application/zip",
+                    "mimetype_inner": null,
+                    "name": "lulc_glc_fcs30d_1985_2000.zip",
+                    "package_id": "5931cb43-714b-4fb0-ae25-4aea24ab04f2",
+                    "position": 1,
+                    "resource_type": null,
+                    "size": 89816702603,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/collaborator-data/lulc_glc_fcs30d_jjohnson/lulc_glc_fcs30d_1985_2000.zip",
+                    "url_type": null
+                }
+            ],
+            "tags": [
+                {
+                    "display_name": "GLOBAL",
+                    "id": "8c764da5-ed81-4744-be5f-b9ee594f0d97",
+                    "name": "GLOBAL",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "LAND COVER",
+                    "id": "e10119a9-04ed-49cb-9ffb-058b6c5e87c6",
+                    "name": "LAND COVER",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "LAND USE LAND COVER",
+                    "id": "2b6b09e9-9d7a-40c3-a330-fc11b8612b96",
+                    "name": "LAND USE LAND COVER",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "LULC",
+                    "id": "d848340a-5249-4f9e-ae68-34fcbae46072",
+                    "name": "LULC",
+                    "state": "active",
+                    "vocabulary_id": null
+                }
+            ],
+            "groups": [],
+            "relationships_as_subject": [],
+            "relationships_as_object": [],
+            "tracking_summary": {
+                "total": 0,
+                "recent": 0
+            }
+        },
+        {
+            "author": "Natural Capital Project, Stanford University",
+            "author_email": "datahub@naturalcapitalproject.org",
+            "creator_user_id": "7a4d74f2-b39a-4c5b-ab4a-41bbcabfd470",
+            "id": "ff2daf65-3b92-4ade-84ce-f04fb388ed31",
+            "isopen": true,
+            "license_id": "CC-BY-4.0",
+            "license_title": "Creative Commons Attribution 4.0",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
+            "metadata_created": "2025-06-27T19:47:57.098766",
+            "metadata_modified": "2025-08-28T19:05:48.398372",
+            "name": "sts-476a98658e58fb224e1c6fdade4cc5ccbc208b441e3f081da455db17eb6f738f",
+            "notes": "This dataset provides a Global ESA 2021 (Version 2) Land Use Land Cover raster file at a resolution of 10m. Included  LULC classes are: Tree cover, Shrubland, Grassland, Cropland, Built-up, Bare/sparse vegetation, Snow and Ice, Permenent water bodies, Herbaceous wetland, Mangroves, and Moss and lichen. Please download the esa2021_classes.csv file alongside the raster for access to the classes legend. This data was accessed from https://worldcover2021.esa.int/download and each tile was downloaded and stitched together into a Global raster by analysts at the Natural Capital Project. The global layer was then converted into a Cloud Optimized GeoTiff with internal overviews. Citation information, and technical documentation, can be found at: https://worldcover2021.esa.int/documentation",
+            "num_resources": 3,
+            "num_tags": 5,
+            "organization": {
+                "id": "db21312f-31cd-4be0-b04a-451b45b6facc",
+                "name": "natcap",
+                "title": "natcap",
+                "type": "organization",
+                "description": "",
+                "image_url": "",
+                "created": "2025-05-15T15:27:25.720453",
+                "is_organization": true,
+                "approval_status": "approved",
+                "state": "active"
+            },
+            "owner_org": "db21312f-31cd-4be0-b04a-451b45b6facc",
+            "private": false,
+            "state": "active",
+            "suggested_citation": "Zanaga, D., Van De Kerchove, R., Daems, D., De Keersmaecker, W., Brockmann, C., Kirches, G., Wevers, J., Cartus, O., Santoro, M., Fritz, S., Lesiv, M., Herold, M., Tsendbazar, N.E., Xu, P., Ramoino, F., Arino, O., 2022. ESA WorldCover 10 m 2021 v200. https://doi.org/10.5281/zenodo.7254221",
+            "title": "ESA WorldCover 2021",
+            "type": "dataset",
+            "version": "",
+            "extras": [
+                {
+                    "key": "natcap_last_updated",
+                    "value": "2025-08-28T19:05:48.355892+00:00"
+                },
+                {
+                    "key": "sources",
+                    "value": "[\"esa2021.tif\", \"esa2021_classes.csv\"]"
+                },
+                {
+                    "key": "sources_res_formats",
+                    "value": "[\"csv\", \"tif\", \"yml\"]"
+                },
+                {
+                    "key": "spatial",
+                    "value": "{\"type\": \"Polygon\", \"coordinates\": [[[-180.0, 84.00000000000001], [-180.0, -59.999999999995005], [179.99999999998747, -59.999999999995005], [179.99999999998747, 84.00000000000001], [-180.0, 84.00000000000001]]]}"
+                }
+            ],
+            "resources": [
+                {
+                    "cache_last_updated": "2025-08-28T15:05:42.246771",
+                    "cache_url": null,
+                    "created": "2025-08-28T15:05:42.246771",
+                    "datastore_active": false,
+                    "description": "Geometamaker YML",
+                    "format": "YML",
+                    "hash": "sha256:5a3502160932b140845ec6d47cad629080e464112f03768d7866438ab0021098",
+                    "id": "0eceedee-f29b-4249-b43b-782546cf5963",
+                    "last_modified": "2025-08-28T19:05:45.694878",
+                    "metadata_modified": "2025-08-28T19:05:45.842841",
+                    "mimetype": null,
+                    "mimetype_inner": null,
+                    "name": "esa2021.tif.yml",
+                    "package_id": "ff2daf65-3b92-4ade-84ce-f04fb388ed31",
+                    "position": 0,
+                    "resource_type": null,
+                    "size": 3516,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://localhost:8443/dataset/ff2daf65-3b92-4ade-84ce-f04fb388ed31/resource/0eceedee-f29b-4249-b43b-782546cf5963/download/esa2021.tif.yml",
+                    "url_type": "upload"
+                },
+                {
+                    "cache_last_updated": "2025-08-28T15:05:42.246911",
+                    "cache_url": null,
+                    "created": "2025-08-28T15:05:42.246911",
+                    "datastore_active": false,
+                    "description": "This dataset provides a Global ESA 2021 (Version 2) Land Use Land Cover raster file at a resolution of 10m. Included  LULC classes are: Tree cover, Shrubland, Grassland, Cropland, Built-up, Bare/sparse vegetation, Snow and Ice, Permenent water bodies, Herbaceous wetland, Mangroves, and Moss and lichen. Please download the esa2021_classes.csv file alongside the raster for access to the classes legend. This data was accessed from https://worldcover2021.esa.int/download and each tile was downloaded and stitched together into a Global raster by analysts at the Natural Capital Project. The global layer was then converted into a Cloud Optimized GeoTiff with internal overviews. Citation information, and technical documentation, can be found at: https://worldcover2021.esa.int/documentation",
+                    "format": "GeoTIFF",
+                    "hash": "crc32c:01nDEg==",
+                    "id": "2a89666b-82ee-499b-80c1-0b5b13c82089",
+                    "last_modified": null,
+                    "metadata_modified": "2025-08-28T19:05:45.987592",
+                    "mimetype": "image/tiff",
+                    "mimetype_inner": null,
+                    "name": "esa2021.tif",
+                    "package_id": "ff2daf65-3b92-4ade-84ce-f04fb388ed31",
+                    "position": 1,
+                    "resource_type": null,
+                    "size": 144511750670,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://storage.googleapis.com/natcap-data-cache/global/esa2021/esa2021.tif",
+                    "url_type": null
+                },
+                {
+                    "cache_last_updated": "2025-08-28T15:05:43.784642",
+                    "cache_url": null,
+                    "created": "2025-08-28T15:05:43.784642",
+                    "datastore_active": false,
+                    "description": "CSV Table",
+                    "format": "Comma Separated Value (.csv)",
+                    "hash": "crc32c:Tbo5WA==",
+                    "id": "93839b9e-0b92-4dda-b75c-6f8f63c44a82",
+                    "last_modified": null,
+                    "metadata_modified": "2025-08-28T19:05:46.144108",
+                    "mimetype": "text/csv",
+                    "mimetype_inner": null,
+                    "name": "esa2021_classes.csv",
+                    "package_id": "ff2daf65-3b92-4ade-84ce-f04fb388ed31",
+                    "position": 2,
+                    "resource_type": null,
+                    "size": 219,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://storage.googleapis.com/natcap-data-cache/global/esa2021/esa2021_classes.csv",
+                    "url_type": null
+                }
+            ],
+            "tags": [
+                {
+                    "display_name": "ESA",
+                    "id": "2ca638e4-4ca2-4241-8db4-442b21dc1f13",
+                    "name": "ESA",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "EUROPEAN SPACE AGENCY",
+                    "id": "10e94874-a372-4016-a60e-b441adc544c9",
+                    "name": "EUROPEAN SPACE AGENCY",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "GLOBAL",
+                    "id": "8c764da5-ed81-4744-be5f-b9ee594f0d97",
+                    "name": "GLOBAL",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "LAND USE LAND COVER",
+                    "id": "2b6b09e9-9d7a-40c3-a330-fc11b8612b96",
+                    "name": "LAND USE LAND COVER",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "LULC",
+                    "id": "d848340a-5249-4f9e-ae68-34fcbae46072",
+                    "name": "LULC",
+                    "state": "active",
+                    "vocabulary_id": null
+                }
+            ],
+            "groups": [],
+            "relationships_as_subject": [],
+            "relationships_as_object": [],
+            "tracking_summary": {
+                "total": 0,
+                "recent": 0
+            }
+        },
+        {
+            "author": "Natural Capital Alliance",
+            "author_email": "datahub@naturalcapitalproject.org",
+            "creator_user_id": "7a4d74f2-b39a-4c5b-ab4a-41bbcabfd470",
+            "id": "fe0566da-033c-4bf7-bb23-f6616f2995d2",
+            "in_collection": [
+                "sts-5a2a758c53fd84b16ddf12a50c54f5f1a62d18964e19fe09a8952231d8fdf71e"
+            ],
+            "isopen": true,
+            "license_id": "CC-BY-4.0",
+            "license_title": "Creative Commons Attribution 4.0",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
+            "metadata_created": "2026-02-06T20:37:32.848439",
+            "metadata_modified": "2026-02-11T20:41:42.675839",
+            "name": "sts-6933bfc8ccc2f97614861ccb5bdff660aab7df6554d9387f8f80be5554b3f777",
+            "notes": "2006 Global Land Cover Dataset (Adapted from GLC_FCS30D - v1) at 30m resolution. This dataset builds off the global, fine-scale land cover dynamic monitoring product (GLC_FCS30D) with a temporal coverage of 1985-2022, to provide global layers as Cloud Optimized geoTIFFs. Data was downloaded from the source and processed by NatCap members at the University of Minnesota. For more information on the processing steps, source data, and land use classifications, please see the 'Lineage' section of the accompanying metadata YAML file.",
+            "num_resources": 3,
+            "num_tags": 4,
+            "organization": {
+                "id": "db21312f-31cd-4be0-b04a-451b45b6facc",
+                "name": "natcap",
+                "title": "natcap",
+                "type": "organization",
+                "description": "",
+                "image_url": "",
+                "created": "2025-05-15T15:27:25.720453",
+                "is_organization": true,
+                "approval_status": "approved",
+                "state": "active"
+            },
+            "owner_org": "db21312f-31cd-4be0-b04a-451b45b6facc",
+            "place": [
+                "GLOBAL"
+            ],
+            "private": false,
+            "state": "active",
+            "suggested_citation": "",
+            "title": "2006 Global Land Cover Dataset (Adapted from GLC_FCS30D)",
+            "type": "dataset",
+            "version": "",
+            "extras": [
+                {
+                    "key": "natcap_last_updated",
+                    "value": "2026-02-11T20:41:42.639239+00:00"
+                },
+                {
+                    "key": "sources",
+                    "value": "[\"lulc_glc_fcs30d_2001_2010/lulc_glc_fcs30d_2006.tif\"]"
+                },
+                {
+                    "key": "sources_res_formats",
+                    "value": "[\"tif\", \"yml\"]"
+                },
+                {
+                    "key": "spatial",
+                    "value": "{\"type\": \"Polygon\", \"coordinates\": [[[-180.0, 90.0], [-180.0, -90.0], [180.0, -90.0], [180.0, 90.0], [-180.0, 90.0]]]}"
+                }
+            ],
+            "resources": [
+                {
+                    "cache_last_updated": "2026-02-11T15:41:39.300213",
+                    "cache_url": null,
+                    "created": "2026-02-11T15:41:39.300213",
+                    "datastore_active": false,
+                    "description": "Geometamaker YML",
+                    "format": "YML",
+                    "hash": "crc32c:igcHdA==",
+                    "id": "1c6ab1a0-ec66-407b-8016-4bc99f927bfa",
+                    "last_modified": null,
+                    "metadata_modified": "2026-02-11T20:41:40.919330",
+                    "mimetype": null,
+                    "mimetype_inner": null,
+                    "name": "lulc_glc_fcs30d_2006.tif.yml",
+                    "package_id": "fe0566da-033c-4bf7-bb23-f6616f2995d2",
+                    "position": 0,
+                    "resource_type": null,
+                    "size": 4018,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/collaborator-data/lulc_glc_fcs30d_jjohnson/lulc_glc_fcs30d_2001_2010/lulc_glc_fcs30d_2006.tif.yml",
+                    "url_type": null
+                },
+                {
+                    "cache_last_updated": "2026-02-11T15:41:39.907360",
+                    "cache_url": null,
+                    "created": "2026-02-11T15:41:39.907360",
+                    "datastore_active": false,
+                    "description": "2006 Global Land Cover Dataset (Adapted from GLC_FCS30D - v1) at 30m resolution. This dataset builds off the global, fine-scale land cover dynamic monitoring product (GLC_FCS30D) with a temporal coverage of 1985-2022, to provide global layers as Cloud Optimized geoTIFFs. Data was downloaded from the source and processed by NatCap members at the University of Minnesota. For more information on the processing steps, source data, and land use classifications, please see the 'Lineage' section of the accompanying metadata YAML file.",
+                    "format": "GeoTIFF",
+                    "hash": "crc32c:C2oGoA==",
+                    "id": "accb6f85-3d11-48c0-91fe-93b2c4c3f03c",
+                    "last_modified": null,
+                    "metadata_modified": "2026-02-11T20:41:42.067541",
+                    "mimetype": "image/tiff",
+                    "mimetype_inner": null,
+                    "name": "lulc_glc_fcs30d_2006.tif",
+                    "package_id": "fe0566da-033c-4bf7-bb23-f6616f2995d2",
+                    "position": 1,
+                    "resource_type": null,
+                    "size": 24585439485,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/collaborator-data/lulc_glc_fcs30d_jjohnson/lulc_glc_fcs30d_2001_2010/lulc_glc_fcs30d_2006.tif",
+                    "url_type": null
+                },
+                {
+                    "cache_last_updated": "2026-02-11T15:41:39.907360",
+                    "cache_url": null,
+                    "created": "2026-02-11T15:41:39.907360",
+                    "datastore_active": false,
+                    "description": "2005 Global Land Cover Dataset (Adapted from GLC_FCS30D - v1) at 30m resolution. This dataset builds off the global, fine-scale land cover dynamic monitoring product (GLC_FCS30D) with a temporal coverage of 1985-2022, to provide global layers as Cloud Optimized geoTIFFs. Data was downloaded from the source and processed by NatCap members at the University of Minnesota. For more information on the processing steps, source data, and land use classifications, please see the 'Lineage' section of the accompanying metadata YAML file.",
+                    "format": "GeoTIFF",
+                    "hash": "crc32c:C2oGoA==",
+                    "id": "accb6f85-3d11-48c0-91fe-93b2c4c3f03d",
+                    "last_modified": null,
+                    "metadata_modified": "2026-02-11T20:41:42.067541",
+                    "mimetype": "image/tiff",
+                    "mimetype_inner": null,
+                    "name": "lulc_glc_fcs30d_2005.tif",
+                    "package_id": "fe0566da-033c-4bf7-bb23-f6616f2995d2",
+                    "position": 1,
+                    "resource_type": null,
+                    "size": 24585439485,
+                    "state": "active",
+                    "tracking_summary": {
+                        "total": 0,
+                        "recent": 0
+                    },
+                    "url": "https://data.naturalcapitalalliance.stanford.edu/download/collaborator-data/lulc_glc_fcs30d_jjohnson/lulc_glc_fcs30d_2001_2010/lulc_glc_fcs30d_2005.tif",
+                    "url_type": null
+                }
+            ],
+            "tags": [
+                {
+                    "display_name": "GLOBAL",
+                    "id": "8c764da5-ed81-4744-be5f-b9ee594f0d97",
+                    "name": "GLOBAL",
+                    "state": "active",
+                    "vocabulary_id": "7320b3ba-1ee9-4fc4-90b3-0240c3aa72df"
+                },
+                {
+                    "display_name": "LAND COVER",
+                    "id": "e10119a9-04ed-49cb-9ffb-058b6c5e87c6",
+                    "name": "LAND COVER",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "LAND USE LAND COVER",
+                    "id": "2b6b09e9-9d7a-40c3-a330-fc11b8612b96",
+                    "name": "LAND USE LAND COVER",
+                    "state": "active",
+                    "vocabulary_id": null
+                },
+                {
+                    "display_name": "LULC",
+                    "id": "d848340a-5249-4f9e-ae68-34fcbae46072",
+                    "name": "LULC",
+                    "state": "active",
+                    "vocabulary_id": null
+                }
+            ],
+            "groups": [],
+            "relationships_as_subject": [],
+            "relationships_as_object": [],
+            "tracking_summary": {
+                "total": 0,
+                "recent": 0
+            }
+        }
+    ],
+    "sort": "score desc",
+    "search_facets": {}
+}

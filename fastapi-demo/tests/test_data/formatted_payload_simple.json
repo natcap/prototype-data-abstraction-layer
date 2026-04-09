@@ -1,0 +1,36 @@
+{
+    "count": 1,
+    "datasets": [
+        {
+            "dataset_url": "https://storage.googleapis.com/natcap-data-cache/global/nasa-hgt-v1-1s/nasa-hgt-v1-1s.tif",
+            "source_catalog_url": "https://localhost:8443/dataset/sts-2b13519934614f4b36243eaeab5c712f37043413fb6fc314d588229a47808157",
+            "name": "NASA HGT DEM - Global Dataset",
+            "description": "NASA DEM HGT version 1 - Global Layer. 30m pixel size. NASADEM 1 arc second (30m) elevation data (collected over the Grand Canyon between 2000-02-11 to 2000-02-21). All tiles were downloaded from NASA Earth Data and stitched into one Cloud Optimized GeoTiff raster. More information on the dataset can be found in the metadata YML file available for download. More information on the source data can found here: https://lpdaac.usgs.gov/products/nasadem_hgtv001/.",
+            "extent": [
+                -179.0001388888889,
+                -56.000138888904445,
+                179.0001388889365,
+                61.00013888888889
+            ],
+            "tags": [
+                "DEM",
+                "DIGITAL ELEVATION MODEL",
+                "INVEST INPUT",
+                "INVEST-READY",
+                "NASA"
+            ],
+            "places": [
+                "GLOBAL"
+            ],
+            "collection": [],
+            "license": {
+                "id": "CC-BY-4.0",
+                "title": "Creative Commons Attribution 4.0",
+                "url": "https://creativecommons.org/licenses/by/4.0/"
+            },
+            "author": "Natural Capital Project, Stanford University",
+            "created": "2025-06-13T19:53:53.233509",
+            "last_updated": "2025-08-28T19:06:00.531711"
+        }
+    ]
+}

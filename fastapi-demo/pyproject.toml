@@ -1,0 +1,27 @@
+[project]
+name = "dhal_api"
+description = "NatCap Data Hub Abstraction Layer API"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE.txt"]
+maintainers = [
+    {name = "Natural Capital Alliance Software Team"}
+]
+
+# the version is provided dynamically by setuptools_scm
+# `dependencies` and `optional-dependencies` are provided by setuptools
+# using the corresponding setup args `install_requires` and `extras_require`
+dynamic = ["version", "dependencies", "optional-dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[build-system]
+requires = ['setuptools>=64', 'wheel', 'setuptools_scm>=8.0']
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+root = ".."
+
+[tool.setuptools.packages.find]
+where = ["src"]

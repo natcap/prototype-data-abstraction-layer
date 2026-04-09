@@ -23,9 +23,9 @@ app = FastAPI(
 )
 
 # Production:
-#CKAN_API_URL = 'https://data.naturalcapitalalliance.stanford.edu'
-#PLACE_VOCAB_ID = '08e541f5-0f71-4931-bfc8-30bf66801146'
-#COLLECTION_VOCAB_ID = 'coming-soon'
+CKAN_API_URL = 'https://data.naturalcapitalalliance.stanford.edu'
+PLACE_VOCAB_ID = '08e541f5-0f71-4931-bfc8-30bf66801146'
+COLLECTION_VOCAB_ID = 'coming-soon'
 
 # Staging:
 #CKAN_API_URL = 'https://data-staging.naturalcapitalproject.org'
@@ -33,9 +33,9 @@ app = FastAPI(
 #COLLECTION_VOCAB_ID = 'coming-soon'
 
 # Dev:
-CKAN_API_URL = 'https://localhost:8443'
-PLACE_VOCAB_ID = '7320b3ba-1ee9-4fc4-90b3-0240c3aa72df'
-COLLECTION_VOCAB_ID = '852876fe-49eb-4b88-95d9-44b35facf7ce'
+#CKAN_API_URL = 'https://localhost:8443'
+#PLACE_VOCAB_ID = '7320b3ba-1ee9-4fc4-90b3-0240c3aa72df'
+#COLLECTION_VOCAB_ID = '852876fe-49eb-4b88-95d9-44b35facf7ce'
 
 
 class CKANException(Exception):
@@ -71,7 +71,7 @@ def search_dataset(filter_query: Annotated[SearchParams, Query()]) -> SearchResp
     """Search for datasets on the Data Hub that match the provided criteria."""
     session = requests.Session()
     # For dev: need to set verify=False when working with the dev CKAN container
-    session.verify = False
+#    session.verify = False
 
     q = utils.tag_search_string_or(filter_query.tags)
 
